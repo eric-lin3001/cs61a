@@ -105,3 +105,5 @@ def hailstone(n):
             n = n * 3 +1
     print(1)
     return len
+
+hailstone(10)
