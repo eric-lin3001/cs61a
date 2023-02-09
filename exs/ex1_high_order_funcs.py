@@ -20,7 +20,13 @@ def sum_cubes(n):
         total,k = total+pow(k,3),k+1
     return total
 
-"""Generation: 将两个函数代码相同的部分取出,不同的部分用参数替代,这里参数是函数。"""
+def sum_pi(n):
+    total,k = 0,1
+    while k<=n:
+        total,k = total+8 / ((4*k-3) * (4*k-1)),k+1
+    return total
+
+"""Generation: 三个函数的共同点明确，考虑函数代码相同的部分取出,不同的部分(关于k的函数),用参数替代,这里参数是函数。"""
 
 def identity(x):
     return x
