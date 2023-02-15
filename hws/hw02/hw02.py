@@ -63,7 +63,10 @@ def accumulate(merger, start, n, term):
     16
     """
     "*** YOUR CODE HERE ***"
-
+    rst,k=start,1
+    while k<=n:
+        rst,k = merger(rst,term(k)), k + 1
+    return rst
 
 def summation_using_accumulate(n, term):
     """Returns the sum: term(1) + ... + term(n), using accumulate.
@@ -80,6 +83,7 @@ def summation_using_accumulate(n, term):
     ['Expr', 'Return']
     """
     "*** YOUR CODE HERE ***"
+    accumulate(add,0,n,term)
 
 
 def product_using_accumulate(n, term):
@@ -97,6 +101,7 @@ def product_using_accumulate(n, term):
     ['Expr', 'Return']
     """
     "*** YOUR CODE HERE ***"
+    accumulate(mul,1,n,term)
 
 
 def funception(func1, start):
@@ -138,7 +143,7 @@ def mul_by_num(num):
     >>> y(-4)
     -8
     """
-    return ______
+    return lambda x:x*num
 
 
 def mod_maker():
@@ -152,8 +157,7 @@ def mod_maker():
     >>> mod(8,4) # 8 % 4
     True
     """
-    return ______
-
+    return lambda x,y: x % y or True
 
 def add_results(f1, f2):
     """
@@ -175,7 +179,7 @@ def add_results(f1, f2):
     >>> a3(4)
     44
     """
-    return ______
+    return lambda x:f1(x)+f2(x)
 
 
 def lambda_math_syntax_check():
